@@ -86,6 +86,9 @@ header {
 .operation.debit .count {
   color: red;
 }
+.tri {
+  display: none;
+}
 
 .reveal h2 {
   margin-bottom: 20px;

@@ -21,7 +21,7 @@
         <div>
           <label for="operator"><small>champ obligatoire</small></label>
           <select name="operator" id="operator" required>
-            <option value="--">-- choisir --</option>
+            <option value="none">-- choisir --</option>
             <option id="more" value="credit">+</option>
             <option id="less" value="debit">-</option>
           </select>
@@ -50,7 +50,7 @@
           />
         </div>
         <div class="text-center">
-          <button type="submit" class="btSubmit">👊</button>
+          <button type="submit" class="btSubmit" data-close>👊</button>
         </div>
       </form>
       <button
@@ -75,9 +75,9 @@
           <div class="cell">
             <div>
               <nav class="navHeader">
-                <a href="#" class="active">Tout</a>
-                <a href="#">Crédit</a>
-                <a href="#">Débit</a>
+                <a id="allOperation" href="#" class="active">Tout</a>
+                <a id="creditOpe" href="#">Crédit</a>
+                <a id="debitOpe" href="#">Débit</a>
               </nav>
             </div>
           </div>
@@ -85,7 +85,7 @@
       </div>
     </header>
     <main>
-      <div class="grid-container">
+      <div class="grid-container" id="true-container">
         <!-- operation -->
         <div class="operation credit">
           <div class="grid-x grid-padding-x align-middle">
