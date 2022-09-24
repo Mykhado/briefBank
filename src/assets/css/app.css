@@ -86,10 +86,12 @@ header {
 .operation.debit .count {
   color: red;
 }
-.tri {
-  display: none;
+.debit{
+  display: block;
 }
-
+.credit{
+  display: block;
+}
 .reveal h2 {
   margin-bottom: 20px;
 }

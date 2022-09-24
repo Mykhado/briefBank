@@ -6,20 +6,19 @@ let motif = document.getElementById("desc");
 let debitCredit = document.getElementById("operator");
 let envoi = document.querySelector(".btSubmit");
 let grid = document.getElementById("true-container");
-let montantsCount = montants.length + 2;
+let montantsCount = montants.length ;
 let btnallOpe = document.getElementById("allOperation");
 let btncreditOpe = document.getElementById("creditOpe");
 let btndebitOpe = document.getElementById("debitOpe");
 let opevalue = document.querySelectorAll(`.operation`);
-let debitOpeValue = document.getElementsByClassName("operation credit");
+let debitOpeValue = document.querySelectorAll(".debit");
 console.log(debitOpeValue);
-let creditOpeValue = document.getElementsByClassName("operation debit");
+let creditOpeValue = document.querySelectorAll(".credit");
 console.log(creditOpeValue);
+let avoir= document.getElementById("solde");
 let valeurMontant;
 let valeurProvenance;
 let valeurMotif;
-
-console.log();
 let labels = [];
 for (let i = 0; i < montantsCount; ++i) {
   labels.push(i.toString());
@@ -30,7 +29,7 @@ const data = {
   datasets: [
     {
       // configuration de la courbe
-      label: provenance,
+      label: "Compte",
       // nom de chaque point
       data: montants,
       // tableau des montants
@@ -113,7 +112,7 @@ function addmoney() {
 envoi.addEventListener("click", (e) => {
   e.preventDefault();
   valeurMontant = ajoutMontant.value;
-  valeurProvenance = provenance.value;
+  valeurProvenance= provenance.value;
   valeurMotif = motif.value;
   //   augmenter la capaciter max du tableau correspondant
   montantsCount++;
@@ -145,7 +144,7 @@ envoi.addEventListener("click", (e) => {
          </div>
        </div>
      `;
-
+  
   addmoney();
   console.log(config.data.labels);
   console.log(config.data.datasets[0].data);
@@ -160,14 +159,30 @@ function removeClasslist() {
 btncreditOpe.addEventListener("click", () => {
   removeClasslist();
   btncreditOpe.classList.add("active");
+  creditOpeValue.forEach(element => element.style.display="block"); 
+  debitOpeValue.forEach(element => element.style.display="none");
+  
 });
 
 btndebitOpe.addEventListener("click", () => {
   removeClasslist();
-  btndebitOpe.classList.add("active");
+  btndebitOpe.classList.add("active"); 
+  debitOpeValue.forEach(element => element.style.display="block");
+  creditOpeValue.forEach(element => element.style.display="none");
 });
 
 btnallOpe.addEventListener("click", () => {
   removeClasslist();
   btnallOpe.classList.add("active");
+  creditOpeValue.forEach(element => element.style.display="block");
+  debitOpeValue.forEach(element => element.style.display="block");
 });
+
+let countDebit = document.querySelectorAll(".debit .count");
+let countCredit = document.querySelectorAll(".credit .count");
+console.log(countDebit);
+console.log(countCredit);
+
+
+console.log(countDebit);
+
