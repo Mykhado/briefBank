@@ -224,7 +224,7 @@ envoi.addEventListener("click", (e) => {
           <div class="grid-x grid-padding-x align-middle">
             <div class="cell shrink">
               <div class="picto">
-                <img src="./assets/images/sac-dargent.png" alt="credit" />
+                <img src="./src/assets/images/sac-dargent.png" alt="credit" />
               </div>
             </div>
             <div class="cell auto">
@@ -247,7 +247,7 @@ envoi.addEventListener("click", (e) => {
            <div class="grid-x grid-padding-x align-middle">
              <div class="cell shrink">
                <div class="picto">
-                 <img src="./assets/images/depenses.png" alt="dedit" />
+                 <img src="./src/assets/images/depenses.png" alt="dedit" />
                </div>
              </div>
              <div class="cell auto">
